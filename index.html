@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tree of Life | Premium Shoe Care</title>
+
+  <meta name="description" content="Tree of Life Premium Shoe Care — refined care for every step.">
+
+  <style>
+    :root {
+      --emerald: #0d3b2e;
+      --deep-green: #071f18;
+      --gold: #c9a45c;
+      --light-gold: #e5cc91;
+      --cream: #f5f1e8;
+      --white: #ffffff;
+      --dark: #07120f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--dark);
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 7%;
+      border-bottom: 1px solid rgba(201, 164, 92, 0.18);
+    }
+
+    .nav-brand {
+      color: var(--light-gold);
+      font-size: 1rem;
+      letter-spacing: 4px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 7% 80px;
+      background:
+        radial-gradient(circle at center, rgba(201, 164, 92, 0.12), transparent 35%),
+        linear-gradient(135deg, #071f18 0%, #03100c 55%, #07120f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border: 1px solid rgba(201, 164, 92, 0.15);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emblem {
+      width: 105px;
+      height: 105px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 3.3rem;
+      box-shadow: 0 0 45px rgba(201, 164, 92, 0.12);
+    }
+
+    .eyebrow {
+      color: var(--light-gold);
+      font-size: 0.75rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: #d7d0c1;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      font-style: italic;
+    }
+
+    .gold-line {
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 35px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 16px 34px;
+      border: 1px solid var(--gold);
+      color: var(--light-gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      transition: all 0.35s ease;
+    }
+
+    .cta:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* PHILOSOPHY */
+
+    .section {
+      padding: 110px 7%;
+    }
+
+    .philosophy {
+      background: var(--cream);
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .section-label {
+      color: #8c6c31;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.7rem;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .section-text {
+      max-width: 720px;
+      margin: auto;
+      color: #554f45;
+      font-size: 1.05rem;
+    }
+
+    /* VALUES */
+
+    .values {
+      background: var(--deep-green);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      padding: 0;
+    }
+
+    .value {
+      padding: 90px 45px;
+      text-align: center;
+      border-right: 1px solid rgba(201, 164, 92, 0.15);
+    }
+
+    .value-number {
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .value h3 {
+      color: var(--light-gold);
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .value p {
+      color: #b9b5a9;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* BRAND STATEMENT */
+
+    .statement {
+      text-align: center;
+      background:
+        linear-gradient(rgba(7, 31, 24, 0.95), rgba(7, 31, 24, 0.95));
+    }
+
+    .statement blockquote {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.2;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .statement cite {
+      display: block;
+      margin-top: 35px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 55px 7%;
+      text-align: center;
+      background: #030b08;
+      border-top: 1px solid rgba(201, 164, 92, 0.2);
+    }
+
+    .footer-brand {
+      color: var(--light-gold);
+      letter-spacing: 5px;
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #77786f;
+      font-family: Arial, sans-serif;
+      font-size: 0.75rem;
+      margin-bottom: 8px;
+    }
+
+    .motto {
+      color: #9d916f;
+      font-style: italic;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 22px 5%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .hero::before {
+        width: 380px;
+        height: 380px;
+      }
+
+      h1 {
+        letter-spacing: 4px;
+      }
+
+      .section {
+        padding: 80px 6%;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .value {
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 164, 92, 0.15);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-brand">TREE OF LIFE</div>
+
+    <ul class="nav-links">
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#values">Our Standard</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="emblem">🌳</div>
+
+        <div class="eyebrow">Premium Shoe Care</div>
+
+        <h1>Tree of Life</h1>
+
+        <div class="gold-line"></div>
+
+        <p class="hero-subtitle">
+          Refined care for every step. Crafted with purpose,
+          presented with excellence.
+        </p>
+
+        <a href="#philosophy" class="cta">
+          Discover Our Standard
+        </a>
+
+      </div>
+
+    </section>
+
+    <section class="section philosophy" id="philosophy">
+
+      <div class="section-label">Our Philosophy</div>
+
+      <h2>Care Beyond Clean.</h2>
+
+      <p class="section-text">
+        At Tree of Life Premium Shoe Care, we believe that
+        exceptional footwear deserves exceptional care.
+        Every detail matters — from the product we create
+        to the step you take with confidence.
+      </p>
+
+    </section>
+
+    <section class="values" id="values">
+
+      <div class="value">
+        <div class="value-number">01</div>
+        <h3>Excellence</h3>
+        <p>
+          Thoughtful products and refined presentation,
+          created with attention to every detail.
+        </p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">02</div>
+        <h3>Integrity</h3>
+        <p>
+          Honest standards, responsible care,
+          and products presented with transparency.
+        </p>
+      </div>
+
+      <div class="value">
+        <div class="value-number">03</div>
+        <h3>Legacy</h3>
+        <p>
+          Building a brand designed to be trusted,
+          remembered, and carried forward.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="section statement">
+
+      <blockquote>
+        “Excellence in every detail.<br>
+        Integrity in every product.<br>
+        Legacy in every step.”
+      </blockquote>
+
+      <cite>Tree of Life Premium Shoe Care</cite>
+
+    </section>
+
+  </main>
+
+  <footer id="contact">
+
+    <div class="footer-brand">TREE OF LIFE</div>
+
+    <p>Premium Shoe Care</p>
+
+    <p class="motto">
+      Excellence in every detail. Integrity in every product.
+      Legacy in every step.
+    </p>
+
+    <p>© 2026 Tree of Life Premium Shoe Care</p>
+
+  </footer>
+
+</body>
+</html>
