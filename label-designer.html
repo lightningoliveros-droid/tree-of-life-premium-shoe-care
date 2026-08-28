@@ -50,25 +50,17 @@
             flex-wrap: wrap;
         }
 
-        /*
-         * ACTUAL LABEL RATIO
-         * Width: 14.5 cm
-         * Height: 16.5 cm
-         *
-         * CSS uses physical units for the master canvas.
-         */
-      /* Tree of Life Premium Shoe Care
-   Label Master System
-   Main Label Styles
-*/
+        /* =========================================
+           MASTER LABEL
+           PHYSICAL SIZE: 14.5 cm × 16.5 cm
+        ========================================= */
 
-.label {
-    position: relative;
+        .label {
+            position: relative;
 
-    width: 14.5cm;
-    height: 16.5cm;
+            width: 14.5cm;
+            height: 16.5cm;
 
- 
             background:
                 linear-gradient(
                     145deg,
@@ -83,7 +75,7 @@
                 0 0 0 2px #3b2a16,
                 0 12px 35px rgba(0,0,0,0.55);
 
-            padding: 12mm 9mm;
+            padding: 9mm 8mm;
 
             overflow: hidden;
         }
@@ -101,6 +93,7 @@
         .label-inner {
             position: relative;
             z-index: 2;
+
             height: 100%;
 
             display: flex;
@@ -109,108 +102,150 @@
             text-align: center;
         }
 
-       
-        
+        /* =========================================
+           FRONT LABEL
+        ========================================= */
+
+        .brand-logo {
+            width: 46mm;
+            height: auto;
+            max-height: 46mm;
+            object-fit: contain;
+            display: block;
+        }
 
         .brand-line {
-            width: 45mm;
+            width: 52mm;
             height: 1px;
             background: #b99a55;
+
             margin: 3mm 0 5mm;
         }
 
-        .logo-placeholder {
-            width: 38mm;
-            height: 38mm;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border: 1px dashed #b99a55;
-
-            color: #b99a55;
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-.brand-logo {
-    width: 35mm;
-    height: auto;
-    max-height: 38mm;
-    object-fit: contain;
-}
         .product-name {
-            margin-top: 5mm;
+            margin-top: 1mm;
 
             font-size: 23px;
             line-height: 1.1;
+
             letter-spacing: 2px;
             text-transform: uppercase;
+
+            color: #f1e4bd;
         }
 
         .product-type {
             margin-top: 2mm;
+            margin-bottom: 2mm;
 
             font-family: Arial, sans-serif;
-            font-size: 11px;
+            font-size: 10px;
+
             letter-spacing: 2px;
             color: #d2bd7a;
         }
 
+        .front-spacer {
+            flex: 1;
+        }
+
         .tagline {
-            margin-top: auto;
-            margin-bottom: 7mm;
+            margin-bottom: 5mm;
 
             font-size: 11px;
             font-style: italic;
+
             color: #d2bd7a;
         }
 
         .volume {
             font-family: Arial, sans-serif;
+
             font-size: 10px;
             letter-spacing: 1.5px;
+
             color: #f1e4bd;
         }
-               /* BACK LABEL STYLES */
+
+        /* =========================================
+           BACK LABEL
+        ========================================= */
+
+        .back-label {
+            padding: 7mm 8mm;
+        }
 
         .back-label .label-inner {
             align-items: center;
             text-align: center;
-            overflow: hidden;
             justify-content: flex-start;
         }
 
+        .back-label .brand-logo {
+            width: 27mm;
+            max-height: 27mm;
+            margin-bottom: 1mm;
+        }
+
+        .back-label .brand-line {
+            width: 38mm;
+            margin: 1.5mm 0 2.5mm;
+        }
+
         .back-label .product-type {
-            margin-top: 2mm;
-            margin-bottom: 1.5mm;
-            font-size: 9px;
+            margin-top: 1.5mm;
+            margin-bottom: 1mm;
+
+            font-size: 8.2px;
             letter-spacing: 1.5px;
         }
 
         .back-label .back-text {
             width: 100%;
             max-width: 118mm;
+
             font-family: Arial, sans-serif;
-            font-size: 8px;
-            line-height: 1.3;
+
+            font-size: 7.2px;
+            line-height: 1.25;
+
             letter-spacing: 0;
             color: #f1e4bd;
+
             text-align: left;
         }
 
         .back-label .website-qr {
-            width: 20mm;
-            height: 20mm;
+            width: 18mm;
+            height: 18mm;
+
             object-fit: contain;
-            margin-top: 3mm;
+
+            margin-top: 2mm;
         }
-        /* Control panel */
+
+        .back-label .footer-note {
+            margin-top: 1.5mm;
+
+            font-family: Arial, sans-serif;
+            font-size: 6.8px;
+
+            letter-spacing: 0.7px;
+            color: #d2bd7a;
+            text-align: center;
+        }
+
+        /* =========================================
+           EDITOR CONTROLS
+        ========================================= */
+
         .controls {
             width: 330px;
+
             padding: 25px;
 
             background: #191c16;
+
             border: 1px solid #4e4229;
         }
 
@@ -221,6 +256,7 @@
 
         .controls label {
             display: block;
+
             margin-top: 18px;
             margin-bottom: 6px;
 
@@ -230,6 +266,7 @@
 
         .controls input {
             width: 100%;
+
             padding: 10px;
 
             background: #0e100d;
@@ -240,6 +277,7 @@
 
         .controls button {
             width: 100%;
+
             margin-top: 22px;
             padding: 12px;
 
@@ -263,15 +301,20 @@
             font-family: Arial, sans-serif;
             font-size: 11px;
             line-height: 1.5;
+
             color: #aaa38e;
         }
 
-        @page {
-    size: 14.5cm 16.5cm;
-    margin: 0;
-}
+        /* =========================================
+           PRINT
+        ========================================= */
 
-@media print {
+        @page {
+            size: 14.5cm 16.5cm;
+            margin: 0;
+        }
+
+        @media print {
 
             body {
                 margin: 0;
@@ -290,9 +333,22 @@
 
             .label {
                 margin: 0;
+
                 box-shadow: none;
+
+                page-break-after: always;
+                break-after: page;
+            }
+
+            .label:last-child {
+                page-break-after: auto;
+                break-after: auto;
             }
         }
+
+        /* =========================================
+           MOBILE PREVIEW
+        ========================================= */
 
         @media (max-width: 700px) {
 
@@ -303,6 +359,7 @@
             .label {
                 transform-origin: top center;
                 transform: scale(0.75);
+
                 margin-bottom: -70px;
             }
         }
@@ -318,25 +375,26 @@
 
     <main class="workspace">
 
-        <!-- MASTER LABEL CANVAS -->
+        <!-- =====================================
+             FRONT LABEL
+        ====================================== -->
+
         <section class="label" id="labelCanvas">
 
             <div class="label-inner">
 
-               
-
                 <img
-    src="LOGO.png"
-    alt="Tree of Life Premium Shoe Care Logo"
-    class="brand-logo"
->
+                    src="LOGO.png"
+                    alt="Tree of Life Premium Shoe Care Logo"
+                    class="brand-logo"
+                >
 
-<div class="brand-line"></div>
+                <div class="brand-line"></div>
 
-              
-
-
-                <div class="product-name" id="previewProduct">
+                <div
+                    class="product-name"
+                    id="previewProduct"
+                >
                     Shoe Foam Cleaner
                 </div>
 
@@ -344,33 +402,56 @@
                     PREMIUM SHOE CARE
                 </div>
 
+                <div class="front-spacer"></div>
+
                 <div class="tagline">
                     Bring every step back to life
                 </div>
 
-                <div class="volume" id="previewVolume">
+                <div
+                    class="volume"
+                    id="previewVolume"
+                >
                     250 mL
                 </div>
 
             </div>
 
         </section>
-              <!-- BACK LABEL CANVAS -->
-        <section class="label back-label" id="backLabelCanvas">
+
+
+        <!-- =====================================
+             BACK LABEL
+        ====================================== -->
+
+        <section
+            class="label back-label"
+            id="backLabelCanvas"
+        >
 
             <div class="label-inner">
+
+                <img
+                    src="LOGO.png"
+                    alt="Tree of Life Premium Shoe Care Logo"
+                    class="brand-logo"
+                >
+
+                <div class="brand-line"></div>
+
 
                 <div class="product-type">
                     DIRECTIONS
                 </div>
 
                 <div class="back-text">
-                    1. Remove loose dirt and dust from the shoes.<br><br>
-                    2. Apply a small amount of foam to the surface using a suitable shoe brush or microfiber towel.<br><br>
-                    3. Gently clean in a circular motion.<br><br>
-                    4. Wipe away residue with a clean, dry microfiber towel.<br><br>
+                    1. Remove loose dirt and dust from the shoes.<br>
+                    2. Apply a small amount of foam to the surface using a suitable shoe brush or microfiber towel.<br>
+                    3. Gently clean in a circular motion.<br>
+                    4. Wipe away residue with a clean, dry microfiber towel.<br>
                     5. Allow the shoes to air dry completely before use.
                 </div>
+
 
                 <div class="product-type">
                     WARNING
@@ -382,6 +463,7 @@
                     before full application. Do not use on damaged or severely wet surfaces.
                 </div>
 
+
                 <div class="product-type">
                     STORAGE
                 </div>
@@ -390,6 +472,8 @@
                     Store in a cool, dry place away from direct sunlight and excessive heat.
                     Keep container tightly closed when not in use.
                 </div>
+
+
                 <div class="product-type">
                     INGREDIENTS
                 </div>
@@ -398,43 +482,56 @@
                     Aqua, Coco-Glucoside, Glycerin, PEG-40 Hydrogenated Castor Oil,
                     Phenoxyethanol, Parfum, Jojoba Oil, Tetrasodium EDTA.
                 </div>
-                            <div class="product-type">
+
+
+                <div class="product-type">
                     PRODUCT INFORMATION
                 </div>
 
-                                 <div class="back-text">
+                <div class="back-text">
                     Net Volume: 250 mL<br>
                     MFG: __________<br>
                     EXP: __________<br>
                     Batch No.: __________
                 </div>
 
+
                 <div class="product-type">
                     MANUFACTURED BY
                 </div>
 
-                              <div class="back-text">
+                <div class="back-text">
                     TREE OF LIFE<br>
                     Mother Ignacia Vill., Carmen<br>
                     Cagayan de Oro City<br>
                     MADE IN THE PHILIPPINES
                 </div>
 
+
                 <div class="product-type">
                     CONTAINS BIODEGRADABLE INGREDIENTS
                 </div>
-<img
-    src="QR.png"
-    alt="Tree of Life Business Website QR Code"
-    class="website-qr"
->
+
+
+                <img
+                    src="QR.png"
+                    alt="Tree of Life Business Website QR Code"
+                    class="website-qr"
+                >
+
+                <div class="footer-note">
+                    Excellence in every detail. Integrity in every product. Legacy in every step.
+                </div>
+
             </div>
 
         </section>
 
-        
 
-        <!-- EDITOR CONTROLS -->
+        <!-- =====================================
+             EDITOR CONTROLS
+        ====================================== -->
+
         <aside class="controls">
 
             <h2>Label Master</h2>
@@ -449,6 +546,7 @@
                 value="Shoe Foam Cleaner"
             >
 
+
             <label for="volumeInput">
                 Volume
             </label>
@@ -459,16 +557,21 @@
                 value="250 mL"
             >
 
+
             <button onclick="window.print()">
                 PRINT / SAVE PDF
             </button>
 
+
             <div class="note">
                 Master label size:<br>
                 14.5 cm × 16.5 cm
+
                 <br><br>
-                This is the foundation of the reusable
-                Tree of Life label system.
+
+                This is the reusable
+                Tree of Life Premium Shoe Care
+                label system.
             </div>
 
         </aside>
@@ -491,20 +594,26 @@
             document.getElementById("previewVolume");
 
 
-        productInput.addEventListener("input", function () {
+        productInput.addEventListener(
+            "input",
+            function () {
 
-            previewProduct.textContent =
-                this.value;
+                previewProduct.textContent =
+                    this.value;
 
-        });
+            }
+        );
 
 
-        volumeInput.addEventListener("input", function () {
+        volumeInput.addEventListener(
+            "input",
+            function () {
 
-            previewVolume.textContent =
-                this.value;
+                previewVolume.textContent =
+                    this.value;
 
-        });
+            }
+        );
 
     </script>
 
