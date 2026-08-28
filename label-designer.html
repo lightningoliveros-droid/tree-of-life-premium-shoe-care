@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tree of Life — Label Designer</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #11130f;
+            color: #f1e4bd;
+            font-family: Georgia, "Times New Roman", serif;
+            padding: 30px;
+        }
+
+        .designer-header {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        .designer-header h1 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        .designer-header p {
+            margin-top: 8px;
+            color: #b9a46a;
+            font-family: Arial, sans-serif;
+        }
+
+        .workspace {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /*
+         * ACTUAL LABEL RATIO
+         * Width: 14.5 cm
+         * Height: 16.5 cm
+         *
+         * CSS uses physical units for the master canvas.
+         */
+        .label {
+            position: relative;
+
+            width: 14.5cm;
+            height: 16.5cm;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #064c3b 0%,
+                    #073d31 45%,
+                    #062f27 100%
+                );
+
+            border: 3px solid #b99a55;
+
+            box-shadow:
+                0 0 0 2px #3b2a16,
+                0 12px 35px rgba(0,0,0,0.55);
+
+            padding: 12mm 9mm;
+
+            overflow: hidden;
+        }
+
+        .label::before {
+            content: "";
+            position: absolute;
+            inset: 5mm;
+
+            border: 1px solid #b99a55;
+
+            pointer-events: none;
+        }
+
+        .label-inner {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .brand {
+            margin-top: 8mm;
+            font-size: 18px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .brand-line {
+            width: 45mm;
+            height: 1px;
+            background: #b99a55;
+            margin: 4mm 0 7mm;
+        }
+
+        .logo-placeholder {
+            width: 38mm;
+            height: 38mm;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px dashed #b99a55;
+
+            color: #b99a55;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .product-name {
+            margin-top: 8mm;
+
+            font-size: 25px;
+            line-height: 1.1;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product-type {
+            margin-top: 3mm;
+
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #d2bd7a;
+        }
+
+        .tagline {
+            margin-top: auto;
+            margin-bottom: 7mm;
+
+            font-size: 11px;
+            font-style: italic;
+            color: #d2bd7a;
+        }
+
+        .volume {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            color: #f1e4bd;
+        }
+
+        /* Control panel */
+        .controls {
+            width: 330px;
+            padding: 25px;
+
+            background: #191c16;
+            border: 1px solid #4e4229;
+        }
+
+        .controls h2 {
+            margin-top: 0;
+            color: #d2bd7a;
+        }
+
+        .controls label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 6px;
+
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .controls input {
+            width: 100%;
+            padding: 10px;
+
+            background: #0e100d;
+            border: 1px solid #665635;
+
+            color: #f1e4bd;
+        }
+
+        .controls button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 12px;
+
+            background: #b99a55;
+            color: #172018;
+
+            border: none;
+            cursor: pointer;
+
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .controls button:hover {
+            opacity: 0.9;
+        }
+
+        .note {
+            margin-top: 20px;
+
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #aaa38e;
+        }
+
+        @media print {
+
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            .designer-header,
+            .controls {
+                display: none;
+            }
+
+            .workspace {
+                display: block;
+            }
+
+            .label {
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .label {
+                transform-origin: top center;
+                transform: scale(0.75);
+                margin-bottom: -70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="designer-header">
+        <h1>Tree of Life</h1>
+        <p>Premium Shoe Care — Label Designer</p>
+    </header>
+
+    <main class="workspace">
+
+        <!-- MASTER LABEL CANVAS -->
+        <section class="label" id="labelCanvas">
+
+            <div class="label-inner">
+
+                <div class="brand">
+                    Tree of Life
+                </div>
+
+                <div class="brand-line"></div>
+
+                <div class="logo-placeholder">
+                    LOGO
+                </div>
+
+                <div class="product-name" id="previewProduct">
+                    Shoe Foam Cleaner
+                </div>
+
+                <div class="product-type">
+                    PREMIUM SHOE CARE
+                </div>
+
+                <div class="tagline">
+                    Bring every step back to life
+                </div>
+
+                <div class="volume" id="previewVolume">
+                    250 mL
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EDITOR CONTROLS -->
+        <aside class="controls">
+
+            <h2>Label Master</h2>
+
+            <label for="productInput">
+                Product Name
+            </label>
+
+            <input
+                id="productInput"
+                type="text"
+                value="Shoe Foam Cleaner"
+            >
+
+            <label for="volumeInput">
+                Volume
+            </label>
+
+            <input
+                id="volumeInput"
+                type="text"
+                value="250 mL"
+            >
+
+            <button onclick="window.print()">
+                PRINT / SAVE PDF
+            </button>
+
+            <div class="note">
+                Master label size:<br>
+                14.5 cm × 16.5 cm
+                <br><br>
+                This is the foundation of the reusable
+                Tree of Life label system.
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <script>
+
+        const productInput =
+            document.getElementById("productInput");
+
+        const volumeInput =
+            document.getElementById("volumeInput");
+
+        const previewProduct =
+            document.getElementById("previewProduct");
+
+        const previewVolume =
+            document.getElementById("previewVolume");
+
+
+        productInput.addEventListener("input", function () {
+
+            previewProduct.textContent =
+                this.value;
+
+        });
+
+
+        volumeInput.addEventListener("input", function () {
+
+            previewVolume.textContent =
+                this.value;
+
+        });
+
+    </script>
+
+</body>
+</html>
