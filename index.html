@@ -348,7 +348,39 @@
 
 }
 
+/* ABOUT */
 
+.about {
+  background: var(--cream);
+  color: var(--dark);
+  text-align: center;
+}
+    .about-highlight {
+  max-width: 500px;
+  margin: 35px auto 0;
+  padding: 30px;
+  border: 1px solid rgba(201, 164, 92, 0.25);
+  background: var(--white);
+}
+    .about-highlight-title {
+  color: #8c6c31;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+  margin-bottom: 15px;
+}
+
+.about-highlight p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #554f45;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.about-highlight + .about-highlight {
+  margin-top: 20px;
+}
 /* CARE GUIDE */
 
 .care-guide {
@@ -583,6 +615,14 @@
   grid-template-columns: 1fr;
   gap: 20px;
 }
+      .about-highlight {
+  padding: 28px 22px;
+  margin-top: 30px;
+}
+
+.about-highlight + .about-highlight {
+  margin-top: 18px;
+}
     }
   </style>
 </head>
@@ -806,7 +846,38 @@
       Because every step deserves thoughtful care.
     </p>
     </section>
+<section class="section about" id="about">
 
+  <div class="section-label">About Tree of Life</div>
+
+  <h2>Rooted in Care.<br>Built for Every Step.</h2>
+
+  <p class="section-text">
+    Tree of Life Premium Shoe Care was created with a simple
+    belief: the things we value deserve to be cared for with
+    intention, integrity, and excellence.
+  </p>
+    <div class="about-highlight">
+
+    <div class="about-highlight-title">Our Purpose</div>
+
+    <p>
+      To create thoughtful shoe care essentials that help people
+      preserve what they value and carry every step with confidence.
+    </p>
+
+  </div>
+    <div class="about-highlight">
+
+    <div class="about-highlight-title">Our Promise</div>
+
+    <p>
+      Excellence in every detail. Integrity in every product.
+      Legacy in every step.
+    </p>
+
+  </div>
+  </section>
     <section class="section statement">
 
       <blockquote>
