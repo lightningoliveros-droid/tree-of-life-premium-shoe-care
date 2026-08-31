@@ -98,7 +98,7 @@
       position: absolute;
       width: 600px;
       height: 600px;
-      border: 1px solid rgba(201, 164, 92, 0..08);
+      border: 1px solid rgba(201, 164, 92, 0.08);
       border-radius: 50%;
       top: 50%;
       left: 50%;
@@ -234,10 +234,35 @@
       color: #554f45;
       font-size: 1.05rem;
     }
+/* PRODUCTS */
 
-    /* VALUES */
+.products {
+  background: #eee9dd;
+  color: var(--dark);
+  text-align: center;
+}
 
-    /* VALUES */
+.products .section-text {
+  margin-bottom: 0;
+}
+
+/* CARE GUIDE */
+
+.care-guide {
+  background: var(--cream);
+  color: var(--dark);
+  text-align: center;
+  border-top: 1px solid rgba(201, 164, 92, 0.15);
+}
+
+.care-guide .section-text {
+  color: #554f45;
+}
+
+/* VALUES */
+
+
+    
 
 .values {
   background: var(--deep-green);
@@ -420,11 +445,13 @@
   <nav>
     <div class="nav-brand">TREE OF LIFE</div>
 
-    <ul class="nav-links">
-      <li><a href="#philosophy">Philosophy</a></li>
-      <li><a href="#values">Our Standard</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+   <ul class="nav-links">
+  <li><a href="#philosophy">Our Philosophy</a></li>
+  <li><a href="#products">Products</a></li>
+  <li><a href="#standard">Our Standard</a></li>
+  <li><a href="#care">Care Guide</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
   </nav>
 
   <main>
@@ -467,9 +494,25 @@
         to the step you take with confidence.
       </p>
 
+        </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="section products" id="products">
+
+      <div class="section-label">Our Products</div>
+
+      <h2>Care Crafted for Every Step.</h2>
+
+      <p class="section-text">
+        Thoughtfully developed shoe care essentials designed
+        to help preserve the appearance, feel, and character
+        of the footwear you value.
+      </p>
+
     </section>
 
-    <section class="values" id="values">
+    <section class="values" id="standard">
 
       <div class="value">
         <div class="value-number">01</div>
@@ -497,6 +540,22 @@
           remembered, and carried forward.
         </p>
       </div>
+
+        </section>
+
+    <!-- CARE GUIDE -->
+
+    <section class="section care-guide" id="care">
+
+      <div class="section-label">Care Guide</div>
+
+      <h2>Care for What You Value.</h2>
+
+      <p class="section-text">
+        Proper care helps preserve the appearance and character
+        of your footwear. Follow the right care routine and
+        give every step the attention it deserves.
+      </p>
 
     </section>
 
