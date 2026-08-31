@@ -246,6 +246,109 @@
   margin-bottom: 0;
 }
 
+/* PRODUCT SHOWCASE */
+
+.product-grid {
+  max-width: 1050px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+.product-card {
+  background: var(--cream);
+  border: 1px solid rgba(201, 164, 92, 0.28);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(7, 18, 15, 0.12);
+}
+
+.product-image-placeholder {
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, rgba(201, 164, 92, 0.10), transparent 45%),
+    linear-gradient(145deg, #f8f5ed 0%, #e9e3d5 100%);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.20);
+}
+
+.product-image-placeholder span {
+  color: #8c6c31;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.product-info {
+  padding: 38px 35px 42px;
+}
+
+.product-category {
+  color: #8c6c31;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.product-info h3 {
+  color: var(--dark);
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.product-info p {
+  max-width: 430px;
+  margin: 0 auto 22px;
+  color: #554f45;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.product-size {
+  color: #8c6c31;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201, 164, 92, 0.20);
+}
+
+
+/* PRODUCT MOBILE */
+
+@media (max-width: 700px) {
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 45px;
+  }
+
+  .product-image-placeholder {
+    min-height: 280px;
+  }
+
+  .product-info {
+    padding: 32px 25px 36px;
+  }
+
+  .product-info h3 {
+    font-size: 1.55rem;
+  }
+
+}
+
+
 /* CARE GUIDE */
 
 .care-guide {
@@ -258,7 +361,36 @@
 .care-guide .section-text {
   color: #554f45;
 }
-
+.care-steps {
+  max-width: 1050px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.care-step {
+  background: var(--white);
+  border: 1px solid rgba(201, 164, 92, 0.25);
+  padding: 40px 28px;
+  text-align: center;
+}
+    .care-step-number {
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+    .care-step h3 {
+  color: var(--dark);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+    .care-step p {
+  color: #554f45;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
 /* VALUES */
 
 
@@ -436,6 +568,10 @@
         border-right: none;
         border-bottom: 1px solid rgba(201, 164, 92, 0.15);
       }
+      .care-steps {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
     }
   </style>
 </head>
@@ -496,21 +632,81 @@
 
         </section>
 
-    <!-- PRODUCTS -->
+   ```html
+<!-- PRODUCTS -->
 
-    <section class="section products" id="products">
+<section class="section products" id="products">
 
-      <div class="section-label">Our Products</div>
+  <div class="section-label">Our Products</div>
 
-      <h2>Care Crafted for Every Step.</h2>
+  <h2>Care Crafted for Every Step.</h2>
 
-      <p class="section-text">
-        Thoughtfully developed shoe care essentials designed
-        to help preserve the appearance, feel, and character
-        of the footwear you value.
-      </p>
+  <p class="section-text">
+    Thoughtfully developed shoe care essentials designed
+    to help preserve the appearance, feel, and character
+    of the footwear you value.
+  </p>
 
-    </section>
+  <div class="product-grid">
+
+    <!-- SHOE FOAM CLEANER -->
+
+    <div class="product-card">
+
+      <div class="product-image-placeholder">
+        <span>250 mL</span>
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">PREMIUM SHOE CARE</div>
+
+        <h3>Shoe Foam Cleaner</h3>
+
+        <p>
+          A refined cleaning essential designed to help remove
+          everyday dirt and surface impurities while preserving
+          the appearance and character of your footwear.
+        </p>
+
+        <div class="product-size">250 mL</div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SOLE WHITENING CREAM -->
+
+    <div class="product-card">
+
+      <div class="product-image-placeholder">
+        <span>100 mL</span>
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">PREMIUM SHOE CARE</div>
+
+        <h3>Sole Whitening Cream</h3>
+
+        <p>
+          A specialized care essential created to help restore
+          the clean appearance of footwear soles and bring
+          renewed brightness to every step.
+        </p>
+
+        <div class="product-size">100 mL</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+```
+
 
     <section class="values" id="standard">
 
@@ -556,7 +752,45 @@
         of your footwear. Follow the right care routine and
         give every step the attention it deserves.
       </p>
+  <div class="care-steps">
 
+    <div class="care-step">
+
+      <div class="care-step-number">01</div>
+
+      <h3>Clean Gently</h3>
+
+      <p>
+        Remove surface dirt with care and use the right
+        cleaning method for the material of your footwear.
+      </p>
+
+    </div>
+        <div class="care-step">
+
+      <div class="care-step-number">02</div>
+
+      <h3>Care with Intention</h3>
+
+      <p>
+        Apply the appropriate care product thoughtfully,
+        giving each part of your footwear the attention it deserves.
+      </p>
+
+    </div>
+        <div class="care-step">
+
+      <div class="care-step-number">03</div>
+
+      <h3>Preserve What Matters</h3>
+
+      <p>
+        Allow your footwear to rest, dry properly,
+        and keep it stored with care so its character lasts.
+      </p>
+
+    </div>
+      </div>
     </section>
 
     <section class="section statement">
