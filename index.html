@@ -595,7 +595,19 @@
       nav {
         padding: 22px 5%;
       }
+nav {
+  border-bottom: none;
+}
 
+nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: rgba(201, 164, 92, 0.18);
+}
       .nav-links {
   display: flex;
   gap: 12px;
