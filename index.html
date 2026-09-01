@@ -453,7 +453,13 @@
   color: var(--cream);
   margin-bottom: 60px;
 }
-
+.values-grid {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
 .value {
   padding: 60px 35px;
   text-align: center;
@@ -621,7 +627,10 @@
       .values {
         grid-template-columns: 1fr;
       }
-
+.values-grid {
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
       .value {
         border-right: none;
         border-bottom: 1px solid rgba(201, 164, 92, 0.15);
