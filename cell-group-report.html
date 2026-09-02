@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cell Group Report</title>
+
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e5e5e5;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      margin: 10mm auto;
+      padding: 7mm;
+      background: #ffffff;
+
+      display: flex;
+      flex-direction: column;
+      gap: 6mm;
+
+      overflow: hidden;
+    }
+
+    .report-form {
+      width: 100%;
+      height: calc((100% - 6mm) / 2);
+
+      border: 1px solid #000000;
+      background: #ffffff;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landscape-content {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 18px;
+      font-weight: bold;
+      color: #777777;
+      letter-spacing: 1px;
+    }
+
+    @media print {
+      html,
+      body {
+        background: #ffffff;
+      }
+
+      .a4-page {
+        margin: 0;
+        padding: 7mm;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="a4-page">
+
+    <!-- CELL GROUP REPORT #1 -->
+    <section class="report-form">
+      <div class="landscape-content">
+        <div class="placeholder">
+          CELL GROUP REPORT — FORM 1
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CELL GROUP REPORT #2 -->
+    <section class="report-form">
+      <div class="landscape-content">
+        <div class="placeholder">
+          CELL GROUP REPORT — FORM 2
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
