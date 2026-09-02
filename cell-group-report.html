@@ -68,7 +68,49 @@
       color: #777777;
       letter-spacing: 1px;
     }
+.report-header {
+  width: 100%;
+  padding: 3mm 4mm 2mm;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+}
 
+.ministry-name {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.report-year {
+  font-size: 9px;
+  margin-top: 0.5mm;
+}
+
+.report-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 1mm;
+  letter-spacing: 0.8px;
+}
+
+.header-details {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 0.7fr;
+  gap: 4mm;
+  margin-top: 3mm;
+  text-align: left;
+}
+
+.header-details > div {
+  font-size: 7px;
+  font-weight: bold;
+}
+
+.header-details .line {
+  height: 4mm;
+  border-bottom: 1px solid #000000;
+  margin-top: 1mm;
+}
     @media print {
       html,
       body {
@@ -90,9 +132,38 @@
     <!-- CELL GROUP REPORT #1 -->
     <section class="report-form">
       <div class="landscape-content">
-        <div class="placeholder">
-          CELL GROUP REPORT — FORM 1
-        </div>
+       <div class="report-header">
+
+  <div class="ministry-name">
+    JOSHUA GENERATION WORLDWIDE MINISTRIES, INC.
+  </div>
+
+  <div class="report-year">
+    2019
+  </div>
+
+  <div class="report-title">
+    CELL GROUP REPORT
+  </div>
+
+  <div class="header-details">
+    <div>
+      <span>CELL GROUP LEADER</span>
+      <div class="line"></div>
+    </div>
+
+    <div>
+      <span>LOCAL CHURCH</span>
+      <div class="line"></div>
+    </div>
+
+    <div>
+      <span>MONTH</span>
+      <div class="line"></div>
+    </div>
+  </div>
+
+</div>
       </div>
     </section>
 
