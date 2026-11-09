@@ -302,42 +302,73 @@ line-height: 1.2;
            PRINT
         ========================================= */
 
-        @page {
-            size: 14.5cm 16.5cm;
-            margin: 0;
-        }
+       
+/* =========================================
+   PRINT — A4 LANDSCAPE
+   FRONT + BACK ON ONE SHEET
+========================================= */
 
-        @media print {
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
 
-            body {
-                margin: 0;
-                padding: 0;
-                background: white;
-            }
+@media print {
 
-            .designer-header,
-            .controls {
-                display: none;
-            }
+    html,
+    body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
 
-            .workspace {
-                display: block;
-            }
+    .designer-header,
+    .controls {
+        display: none !important;
+    }
 
-            .label {
-                margin: 0;
+    .workspace {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
 
-                box-shadow: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        flex-wrap: nowrap;
+    }
 
-                page-break-after: always;
-                break-after: page;
-            }
+    .label {
+        flex: 0 0 145mm;
 
-            .label:last-child {
-                page-break-after: auto;
-                break-after: auto;
-            }
-        }
+        width: 145mm;
+        height: 165mm;
+
+        margin: 0;
+        padding: 9mm 8mm;
+
+        transform: none;
+
+        box-shadow: none;
+
+        page-break-after: auto;
+        break-after: auto;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .back-label {
+        padding: 7mm 8mm;
+    }
+
+}
+
 
         /* =========================================
            MOBILE PREVIEW
