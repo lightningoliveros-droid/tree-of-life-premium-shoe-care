@@ -58,8 +58,8 @@
         .label {
             position: relative;
 
-            width: 14.5cm;
-            height: 16.5cm;
+            width: 2.9in;
+            height: 6.3in;
 
             background:
                 linear-gradient(
@@ -107,9 +107,9 @@
         ========================================= */
 
 .brand-logo {
-    width: 46mm;
+    width: 30mm;
     height: auto;
-    max-height: 46mm;
+    max-height: 30mm;
     object-fit: contain;
     display: block;
     border-radius: 50%;
@@ -175,8 +175,8 @@
         }
 
         .back-label .brand-logo {
-            width: 27mm;
-            max-height: 27mm;
+            width: 18mm;
+            max-height: 18mm;
             margin-bottom: 1mm;
         }
 
@@ -344,24 +344,23 @@ line-height: 1.2;
     }
 
     .label {
-        flex: 0 0 145mm;
+    flex: 0 0 2.9in;
 
-        width: 145mm;
-        height: 165mm;
+    width: 2.9in;
+    height: 6.3in;
 
-        margin: 0;
-        padding: 9mm 8mm;
+    margin: 0;
+    padding: 9mm 5mm;
 
-        transform: none;
+    transform: none;
+    box-shadow: none;
 
-        box-shadow: none;
+    page-break-after: auto;
+    break-after: auto;
 
-        page-break-after: auto;
-        break-after: auto;
-
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
 
     .back-label {
         padding: 7mm 8mm;
@@ -374,7 +373,7 @@ line-height: 1.2;
            MOBILE PREVIEW
         ========================================= */
 
-        @media (max-width: 700px) {
+        @media screen and (max-width: 700px) {
 
             body {
                 padding: 15px;
@@ -589,7 +588,7 @@ line-height: 1.2;
 
             <div class="note">
                 Master label size:<br>
-                14.5 cm × 16.5 cm
+                2.9 in × 6.3 in
 
                 <br><br>
 
